@@ -1,9 +1,8 @@
 package com.java_learning_2.lesson_1.entity;
 
-import com.java_learning_2.lesson_1.interfaces.Jump;
-import com.java_learning_2.lesson_1.interfaces.Run;
+import com.java_learning_2.lesson_1.interfaces.Members;
 
-public class Human implements Jump, Run {
+public class Human implements Members {
 
     private final String name;
     private final int distance;
@@ -13,6 +12,11 @@ public class Human implements Jump, Run {
         this.name = name;
         this.distance = distance;
         this.height = height;
+    }
+
+    @Override
+    public String name() {
+        return name;
     }
 
     @Override
@@ -26,14 +30,16 @@ public class Human implements Jump, Run {
     }
 
     public String infoHuman() {
-        return  "Человек " + this.name + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
+        return  "Человек " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
     }
 
     public String infoHumanJump() {
-        return  "Человек " + this.name + " прыгает на " + height() + " метра в высоту";
+        return  "Человек " + name() + " прыгает на " + height() + " метра в высоту";
     }
 
     public String infoHumanRun() {
-        return  "Человек " + this.name + " может пробежать " + distance() + " метров";
+        return  "Человек " + name() + " может пробежать " + distance() + " метров";
     }
+
+
 }

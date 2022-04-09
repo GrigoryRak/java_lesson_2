@@ -1,9 +1,8 @@
 package com.java_learning_2.lesson_1.entity;
 
-import com.java_learning_2.lesson_1.interfaces.Jump;
-import com.java_learning_2.lesson_1.interfaces.Run;
+import com.java_learning_2.lesson_1.interfaces.Members;
 
-public class Cat implements Jump, Run {
+public class Cat implements Members {
 
     private final String name;
     private final int distance;
@@ -13,6 +12,11 @@ public class Cat implements Jump, Run {
         this.name = name;
         this.distance = distance;
         this.height = height;
+    }
+
+    @Override
+    public String name() {
+        return name;
     }
 
     @Override
@@ -26,15 +30,15 @@ public class Cat implements Jump, Run {
     }
 
     public String infoCat() {
-        return  "Кот " + this.name + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
+        return "Кот " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
     }
 
     public String infoCatJump() {
-        return  "Кот " + this.name + " прыгает на " + height() + " метра в высоту";
+        return "Кот " + name() + " прыгает на " + height() + " метра в высоту";
     }
 
     public String infoCatRun() {
-        return  "Кот " + this.name + " может пробежать " + distance() + " метров";
+        return "Кот " + name() + " может пробежать " + distance() + " метров";
     }
 
 }

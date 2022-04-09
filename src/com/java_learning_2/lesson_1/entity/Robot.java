@@ -1,9 +1,8 @@
 package com.java_learning_2.lesson_1.entity;
 
-import com.java_learning_2.lesson_1.interfaces.Jump;
-import com.java_learning_2.lesson_1.interfaces.Run;
+import com.java_learning_2.lesson_1.interfaces.Members;
 
-public class Robot implements Jump, Run {
+public class Robot implements Members {
 
     private final String name;
     private final int distance;
@@ -13,6 +12,11 @@ public class Robot implements Jump, Run {
         this.name = name;
         this.distance = distance;
         this.height = height;
+    }
+
+    @Override
+    public String name() {
+        return name;
     }
 
     @Override
@@ -30,11 +34,11 @@ public class Robot implements Jump, Run {
     }
 
     public String infoRobotJump() {
-        return  "Робот " + this.name + " прыгает на " + height() + " метра в высоту";
+        return  "Робот " + name() + " прыгает на " + height() + " метра в высоту";
     }
 
     public String infoRobotRun() {
-        return  "Робот " + this.name + " может пробежать " + distance() + " метров";
+        return  "Робот " + name() + " может пробежать " + distance() + " метров";
     }
 
 }
