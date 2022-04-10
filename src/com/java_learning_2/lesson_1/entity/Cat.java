@@ -20,6 +20,11 @@ public class Cat implements Members {
     }
 
     @Override
+    public String info(String name, int distance, int height) {
+        return "Кот " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
+    }
+
+    @Override
     public int height() {
         return height;
     }
@@ -31,14 +36,6 @@ public class Cat implements Members {
 
     public String infoCat() {
         return "Кот " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
-    }
-
-    public String infoCatJump() {
-        return "Кот " + name() + " прыгает на " + height() + " метра в высоту";
-    }
-
-    public String infoCatRun() {
-        return "Кот " + name() + " может пробежать " + distance() + " метров";
     }
 
 }

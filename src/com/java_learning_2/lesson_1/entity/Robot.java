@@ -25,20 +25,17 @@ public class Robot implements Members {
     }
 
     @Override
+    public String info(String name, int distance, int height) {
+        return "Робот " + this.name + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
+    }
+
+    @Override
     public int distance() {
         return distance;
     }
 
     public String infoRobot() {
-        return  "Робот " + this.name + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
-    }
-
-    public String infoRobotJump() {
-        return  "Робот " + name() + " прыгает на " + height() + " метра в высоту";
-    }
-
-    public String infoRobotRun() {
-        return  "Робот " + name() + " может пробежать " + distance() + " метров";
+        return "Робот " + this.name + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
     }
 
 }

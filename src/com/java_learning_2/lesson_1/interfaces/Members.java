@@ -4,4 +4,6 @@ public interface Members {
     String name();
     int distance();
     int height();
+
+    String info(String name, int distance, int height);
 }

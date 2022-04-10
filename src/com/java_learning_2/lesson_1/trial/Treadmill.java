@@ -6,7 +6,7 @@ public class Treadmill implements Run {
 
     private final int distance;
 
-    public Treadmill (int distance){
+    public Treadmill(int distance) {
         this.distance = distance;
     }
 
@@ -15,15 +15,10 @@ public class Treadmill implements Run {
         return distance;
     }
 
-    @Override
-    public int height() {
-        return 0;
-    }
-
-    public void checkDistance(int mount){
-        if (distance() >= mount){
+    public void checkDistance(int mount) {
+        if (distance() >= mount) {
             System.out.println("Пробежал");
-        } else if (mount >= distance()){
+        } else if (mount >= distance()) {
             System.out.println("Беговая дорожка не подходит для дистанции " + mount + " метров");
         } else {
             System.out.println("Не пробежал");
@@ -31,7 +26,7 @@ public class Treadmill implements Run {
     }
 
     public String infoTreadmill() {
-        return  "На беговой дорожке можно пробежать дистанцию " + distance() + " метров за одну тренировку";
+        return "На беговой дорожке можно пробежать дистанцию " + distance() + " метров за одну тренировку";
     }
 
 }

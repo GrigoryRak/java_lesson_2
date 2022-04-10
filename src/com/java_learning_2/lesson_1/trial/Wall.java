@@ -11,11 +11,6 @@ public class Wall implements Jump {
     }
 
     @Override
-    public int distance() {
-        return 0;
-    }
-
-    @Override
     public int height() {
         return height;
     }

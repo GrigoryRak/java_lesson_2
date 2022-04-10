@@ -25,21 +25,17 @@ public class Human implements Members {
     }
 
     @Override
+    public String info(String name, int distance, int height) {
+        return "Человек " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
+    }
+
+    @Override
     public int distance() {
         return distance;
     }
 
     public String infoHuman() {
-        return  "Человек " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
+        return "Человек " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
     }
-
-    public String infoHumanJump() {
-        return  "Человек " + name() + " прыгает на " + height() + " метра в высоту";
-    }
-
-    public String infoHumanRun() {
-        return  "Человек " + name() + " может пробежать " + distance() + " метров";
-    }
-
 
 }
