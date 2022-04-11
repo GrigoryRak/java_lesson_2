@@ -25,6 +25,15 @@ public class Robot implements Members {
     }
 
     @Override
+    public String toString() {
+        return "Robot{" +
+                "name='" + name + '\'' +
+                ", distance=" + distance +
+                ", height=" + height +
+                '}';
+    }
+
+    @Override
     public String info(String name, int distance, int height) {
         return "Робот " + this.name + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
     }

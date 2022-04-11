@@ -38,4 +38,12 @@ public class Cat implements Members {
         return "Кот " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
     }
 
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                ", distance=" + distance +
+                ", height=" + height +
+                '}';
+    }
 }

@@ -8,12 +8,12 @@ import com.java_learning_2.lesson_1.trial.Wall;
 
 public class App1 {
     public static void main(String[] args){
-        Cat barsik = new Cat("Барсик", 20, 2);
+        Cat barsik = new Cat("Барсик", 1000, 2);
         Human andrey = new Human("Андрей", 1000, 0);
         Robot t1000 = new Robot("T1000", 1001, 4);
 
         Treadmill modelOne = new Treadmill(1000);
-        Wall smallWall = new Wall(1);
+        Wall smallWall = new Wall(2);
 
         System.out.println(barsik.infoCat());
         System.out.println(andrey.infoHuman());
@@ -21,13 +21,17 @@ public class App1 {
         System.out.println(modelOne.infoTreadmill());
         System.out.println(smallWall.infoWall());
 
-        modelOne.checkDistance(barsik.distance());
-        modelOne.checkDistance(andrey.distance());
-        modelOne.checkDistance(t1000.distance());
+        System.out.println(modelOne.checkDistance2(barsik));
+        System.out.println(smallWall.checkWall2(barsik));
 
-        smallWall.checkWall(barsik.height());
-        smallWall.checkWall(andrey.height());
-        smallWall.checkWall(t1000.height());
+        System.out.println(modelOne.checkDistance2(andrey));
+        System.out.println(smallWall.checkWall2(andrey));
+
+        System.out.println(modelOne.checkDistance2(t1000));
+        System.out.println(smallWall.checkWall2(t1000));
+
+
+
 
     }
 }
