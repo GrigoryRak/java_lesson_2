@@ -6,4 +6,6 @@ public interface Lets {
     int distance();
     int height();
 
+    boolean checkLets(Members members);
+
 }

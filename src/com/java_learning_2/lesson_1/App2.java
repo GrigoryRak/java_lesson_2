@@ -22,6 +22,7 @@ public class App2 {
         lets[1] = new Wall(2);
 
 
+
 //        for (int i = 0; i < members.length; i++) {
 //            System.out.println();
 //            System.out.println("----------------------Характеристика испытуемого----------------------");
@@ -44,22 +45,22 @@ public class App2 {
 //        }
 
 //        Использование массива с конкретным индексом
-        for (Members member : members) {
-            System.out.println();
-            System.out.println("----------------------Характеристика испытуемого----------------------");
-            System.out.println(member.info(member.name(), member.distance(), member.height()));
-            System.out.println("----------------------Тестирование испытуемого----------------------");
-            if (lets[0].distance() >= member.distance()) {
-                System.out.println(member.name() + " пробежал растояние " + member.distance());
-                if (member.height() >= lets[1].height()) {
-                    System.out.println(member.name() + " перепрыгнул стену высотой " + lets[1].height() + " метр");
-                } else {
-                    System.out.println(member.name() + " выбыл из теста");
-                }
-            } else {
-                System.out.println(member.name() + " выбыл из теста");
-            }
-        }
+//        for (Members member : members) {
+//            System.out.println();
+//            System.out.println("----------------------Характеристика испытуемого----------------------");
+//            System.out.println(member.info(member.name(), member.distance(), member.height()));
+//            System.out.println("----------------------Тестирование испытуемого----------------------");
+//            if (lets[0].distance() >= member.distance()) {
+//                System.out.println(member.name() + " пробежал растояние " + member.distance());
+//                if (member.height() >= lets[1].height()) {
+//                    System.out.println(member.name() + " перепрыгнул стену высотой " + lets[1].height() + " метр");
+//                } else {
+//                    System.out.println(member.name() + " выбыл из теста");
+//                }
+//            } else {
+//                System.out.println(member.name() + " выбыл из теста");
+//            }
+//        }
 
     }
 }
