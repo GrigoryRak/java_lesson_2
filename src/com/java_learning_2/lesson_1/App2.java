@@ -21,6 +21,7 @@ public class App2 {
         lets[0] = new Treadmill(1000);
         lets[1] = new Wall(2);
 
+
 //        for (int i = 0; i < members.length; i++) {
 //            System.out.println();
 //            System.out.println("----------------------Характеристика испытуемого----------------------");

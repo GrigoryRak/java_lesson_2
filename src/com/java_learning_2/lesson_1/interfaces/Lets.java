@@ -1,11 +1,9 @@
 package com.java_learning_2.lesson_1.interfaces;
 
-public interface Lets {
-    default int distance(){
-        return 0;
-    }
+//интерфейс препятствия принимает участника и возвращает boolean, т.е. информацию о том, может ли переданный участник предолеть данное препятствие
 
-    default int height() {
-        return 0;
-    }
+public interface Lets {
+    int distance();
+    int height();
+
 }

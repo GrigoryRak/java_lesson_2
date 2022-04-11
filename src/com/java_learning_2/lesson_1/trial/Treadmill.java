@@ -1,5 +1,6 @@
 package com.java_learning_2.lesson_1.trial;
 
+import com.java_learning_2.lesson_1.interfaces.Members;
 import com.java_learning_2.lesson_1.interfaces.Run;
 
 public class Treadmill implements Run {
@@ -15,6 +16,11 @@ public class Treadmill implements Run {
         return distance;
     }
 
+    @Override
+    public int height() {
+        return 0;
+    }
+
     public void checkDistance(int mount) {
         if (distance() >= mount) {
             System.out.println("Пробежал");
@@ -23,6 +29,12 @@ public class Treadmill implements Run {
         } else {
             System.out.println("Не пробежал");
         }
+    }
+
+    public boolean checkDistance2(Members runCheck) {
+        int checkMembersRun = runCheck.distance();
+        boolean b = checkMembersRun >= distance;
+        return b;
     }
 
     public String infoTreadmill() {

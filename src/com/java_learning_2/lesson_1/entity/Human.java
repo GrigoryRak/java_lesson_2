@@ -38,4 +38,12 @@ public class Human implements Members {
         return "Человек " + name() + " прыгает на " + height() + " метра в высоту и может пробежать " + distance() + " метров";
     }
 
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", distance=" + distance +
+                ", height=" + height +
+                '}';
+    }
 }
