@@ -20,5 +20,4 @@ public class SumArray extends CheckSizeArray {
         }
         return sum;
     }
-
 }
