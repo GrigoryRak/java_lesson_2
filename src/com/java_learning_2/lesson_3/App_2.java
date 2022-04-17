@@ -13,17 +13,21 @@ public class App_2 {
 
     public static void main(String[] args) {
 
-        Phonebook phonebook = new Phonebook();
+        Phonebook.addSubscriber("+79036001000", "Ivanov");
+        Phonebook.addSubscriber("+79036001001", "Ivanov");
+        Phonebook.addSubscriber("+79036001002", "Ivanov");
+        Phonebook.addSubscriber("+79036001003", "Ivanov");
+        Phonebook.addSubscriber("+79036001004", "Ivanov");
+        Phonebook.addSubscriber("+79036001005", "Ivanov");
+        Phonebook.addSubscriber("+79036001006", "Ivanov");
+        Phonebook.addSubscriber("+79036001007", "Ivanov");
+        Phonebook.addSubscriber("+79036001008", "Ivanov");
+        Phonebook.addSubscriber("+79036001009", "Petrov");
+        Phonebook.addSubscriber("+79036001010", "Sidorov");
+        Phonebook.addSubscriber("+79036001011", "Komarov");
 
-        phonebook.addSubscriber("Ivanov", 8_903_600_10);
-        phonebook.addSubscriber("Ivanov", 8_903_600_11);
-        phonebook.addSubscriber("Ivanov", 8_903_600_12);
-        phonebook.addSubscriber("Ivanov", 8_903_600_13);
-        phonebook.addSubscriber("Ivanov", 8_903_600_14);
-        phonebook.addSubscriber("Ivanov", 8_903_600_15);
-        phonebook.addSubscriber("Ivanov", 8_903_600_16);
+        Phonebook.searchSubscriber("Ivanov");
 
-        phonebook.seachSubscriber("Ivanov");
-        phonebook.printPhonebook();
+//        Phonebook.printPhonebook();
     }
 }

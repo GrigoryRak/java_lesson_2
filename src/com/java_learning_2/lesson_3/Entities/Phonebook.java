@@ -1,42 +1,38 @@
 package com.java_learning_2.lesson_3.Entities;
 
-import java.security.Key;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Phonebook {
 
-    String surname;
-    long phoneNumber;
-    Map <String, Long> phonebookMaps = new HashMap<>();
+    private static final Map<String, String> phonebookMaps = new HashMap<>();
+    private static final List<String> findSubs = new ArrayList<>();
 
-    public String getSurname() {
-        return surname;
+    //    Добавляем абонента
+    public static void addSubscriber(String phoneNumber, String surname) {
+        phonebookMaps.put(phoneNumber, surname);
     }
 
-    public long getPhoneNumber() {
-        return phoneNumber;
-    }
-
-//    Добавляем абонента
-    public void addSubscriber(String surname, long phoneNumber){
-        phonebookMaps.put(surname, phoneNumber);
-
-    }
-
-//    Ищем абонента
-    public void seachSubscriber(String surname){
-        for (Map.Entry<String, Long> entry:phonebookMaps.entrySet()){
-            System.out.println("Фамилия : " + entry.getKey().equals(surname) + " / Телефон: " + entry.getValue());
+    //    Ищем абонента по имени
+    public static void searchSubscriber(String surname) {
+        if (!Objects.equals(surname, "")) {
+            for (Map.Entry<String, String> entry : phonebookMaps.entrySet()) {
+                if (surname.equalsIgnoreCase(entry.getValue())) {
+                    findSubs.add("Фамилия : " + entry.getValue() + " / Телефон: " + entry.getKey());
+                }
+            }
+        } else {
+            System.out.println("Не введена фамилия абонента");
+        }
+        if (findSubs.size() == 0) findSubs.add("Абонент с фамилией " + surname + " не найден");
+        for (String findSub : findSubs) {
+            System.out.println(findSub);
         }
     }
 
-//    Печатаем справочник
-    public void printPhonebook(){
-        for (Map.Entry<String, Long> entry:phonebookMaps.entrySet()){
-            System.out.println("Фамилия : " + entry.getKey() + " / Телефон: " + entry.getValue());
+    //    Печатаем справочник
+    public static void printPhonebook() {
+        for (Map.Entry<String, String> entry : phonebookMaps.entrySet()) {
+            System.out.println("Фамилия : " + entry.getValue() + " / Телефон: " + entry.getKey());
         }
     }
 }

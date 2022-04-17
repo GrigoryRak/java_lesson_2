@@ -1,4 +1,4 @@
-package com.java_learning_2.lesson_3.Methods;
+package com.java_learning_2.lesson_3.Entities;
 
 import java.util.*;
 
@@ -32,8 +32,7 @@ public class FindDuplicates {
     }
 
     public static void countEntries(List<String> list) {
-        Set<String> set = new HashSet<>();
-        set.addAll(list);
+        Set<String> set = new HashSet<>(list);
         for (String name : set) {
             System.out.println(name + " : " + Collections.frequency(list, name));
         }
