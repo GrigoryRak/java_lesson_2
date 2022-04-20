@@ -11,7 +11,7 @@
    <bottom>
       <HBox prefHeight="25.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="messageField" onAction="#sendMessageChat" prefHeight="25.0" prefWidth="515.0" promptText="Введите сообщение для отправки..." HBox.hgrow="ALWAYS">
+            <TextField fx:id="messageField" onAction="#sendMessageChat" prefHeight="25.0" promptText="Введите сообщение для отправки..." HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin></TextField>
