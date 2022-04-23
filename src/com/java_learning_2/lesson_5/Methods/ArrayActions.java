@@ -1,7 +1,5 @@
 package com.java_learning_2.lesson_5.Methods;
 
-import java.util.Arrays;
-
 public class ArrayActions {
 
     public float[] initializationArray(int sizeArray){
@@ -11,12 +9,5 @@ public class ArrayActions {
         }
         return initialArray;
     }
-
-//    public float[] splitArray(int sizeArray, int halfSizeArray){
-//    }
-
-//    public void unionArray(){
-//
-//    }
 
 }

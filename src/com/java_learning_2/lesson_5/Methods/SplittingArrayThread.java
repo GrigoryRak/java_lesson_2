@@ -14,7 +14,6 @@ public class SplittingArrayThread {
     }
 
     public static void secondMethod(float[] array) throws InterruptedException {
-
         long startTime = System.currentTimeMillis();
 
         float[] firstHalArray = Arrays.copyOfRange(array, 0, array.length / 2);
@@ -36,13 +35,14 @@ public class SplittingArrayThread {
         threadFirstHalArray.join();
         threadSecondHalfArray.join();
 
-        System.out.println(Arrays.toString(firstHalArray));
-        System.out.println(Arrays.toString(secondHalfArray));
+//        System.out.println(Arrays.toString(firstHalArray));
+//        System.out.println(Arrays.toString(secondHalfArray));
 
         float[] unionArray = array;
         System.arraycopy(firstHalArray, 0, unionArray, 0, array.length / 2 );
         System.arraycopy(secondHalfArray, 0, unionArray, array.length / 2, array.length / 2 );
-        System.out.println(Arrays.toString(unionArray));
+
+//        System.out.println(Arrays.toString(unionArray));
 
         System.out.println("Two thread time: " + (System.currentTimeMillis() -
                 startTime) + " ms.");
