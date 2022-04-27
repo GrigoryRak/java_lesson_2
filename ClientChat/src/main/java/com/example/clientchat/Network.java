@@ -29,8 +29,9 @@ public class Network {
     public boolean connect() {
         try {
             socket = new Socket(SERVER_HOST, SERVER_PORT);
-            socketInput = new DataInputStream(socket.getInputStream());
             socketOutput = new DataOutputStream(socket.getOutputStream());
+            socketInput = new DataInputStream(socket.getInputStream());
+            System.out.println("Client connected to socket.");
             return true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,7 +43,7 @@ public class Network {
         try {
             socketOutput.writeUTF(message);
         } catch (IOException e) {
-            System.err.println("Failed to send message to server");
+            System.err.println("Failed to send message to server. Method sendMessage");
             throw e;
         }
     }
@@ -56,7 +57,7 @@ public class Network {
                         String messages = socketInput.readUTF();
                         messageHandler.accept(messages);
                     } catch (IOException e) {
-                        System.err.println("Failed to get message from server");
+                        System.err.println("Failed to get message from server. Method waitMessages");
                         break;
                     }
                 }
