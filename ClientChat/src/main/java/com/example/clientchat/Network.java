@@ -55,6 +55,9 @@ public class Network {
                 while (true) {
                     try {
                         String messages = socketInput.readUTF();
+                        if (messages.equals("/end")){
+                            break;
+                        }
                         messageHandler.accept(messages);
                     } catch (IOException e) {
                         System.err.println("Failed to get message from server. Method waitMessages");
@@ -69,8 +72,18 @@ public class Network {
 
     public void close(){
         try {
+            socketInput.close();
+        } catch (Exception e){
+            System.err.println("Failed to close socketInput connection");
+        }
+        try {
+            socketOutput.close();
+        } catch (Exception e){
+            System.err.println("Failed to close socketOutput connection");
+        }
+        try {
             socket.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Failed to close network connection");
         }
     }

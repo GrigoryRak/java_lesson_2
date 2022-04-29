@@ -30,6 +30,9 @@ public class ClientController {
 
     public void sendMessage(){
         String message = messageTextArea.getText();
+        if (message.trim().isEmpty()){
+            return;
+        }
         chatTextArea.appendText(DateFormat.getTimeInstance().format(new Date()) + " ");
         messageTextArea.requestFocus();
         appendMessageToChat(message);
