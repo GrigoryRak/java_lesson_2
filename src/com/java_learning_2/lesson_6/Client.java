@@ -58,11 +58,11 @@ public class Client {
                 try {
                     if (bufferedReaderForInputConsole.ready()) {
                         String message = bufferedReaderForInputConsole.readLine();
+                        printWriter.println(message);
                         if (message.equalsIgnoreCase("/end")) {
                             System.out.println("Client initialize connections suicide ...");
                             System.exit(0);
                         }
-                        printWriter.println(message);
                     }
                 } catch (IOException e) {
                     System.out.println("The network connection was closed");
