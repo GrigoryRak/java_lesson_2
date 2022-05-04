@@ -1,24 +1,57 @@
 package com.example.clientchat;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-
+import javafx.stage.WindowEvent;
 import java.io.IOException;
 
 public class ClientChat extends Application {
+
+    private Stage stage;
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ClientChat.class.getResource("chat-tepmlate.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        stage.setTitle("Клиент Чат");
-        stage.setScene(scene);
-
+        this.stage = stage;
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(ClientChat.class.getResource("chat-tepmlate.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        this.stage.setTitle("Клиент Чат");
+        this.stage.setScene(scene);
         ClientController controller = fxmlLoader.getController();
         controller.userListId.getItems().addAll("User_1", "User_2");
-
         stage.show();
+        connectToServer(controller);
+    }
+
+    private void connectToServer(ClientController clientController) {
+        Network network = new Network();
+        boolean resultConnectedToServer = network.connect();
+        if (!resultConnectedToServer) {
+            String errorMessage = "Unable to establish network connection";
+            System.err.println(errorMessage);
+            showErrorDialog(errorMessage);
+        }
+        clientController.setNetwork(network);
+        clientController.setApplication(this);
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent windowEvent) {
+                network.close();
+            }
+        });
+    }
+
+    public void showErrorDialog(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     public static void main(String[] args) {
