@@ -9,14 +9,16 @@ import com.example.command.CommandType;
 import com.example.command.commands.commands.AuthOkCommandData;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+
 
 import java.io.IOException;
 
-public class AuthController {
+public class AuthController{
 
+    @FXML
+    public AnchorPane authWindow;
     @FXML
     public TextField loginField;
     @FXML
@@ -79,4 +81,5 @@ public class AuthController {
     public void close() {
         getNetwork().removeReadMessageListener(readMessageListener);
     }
+
 }
